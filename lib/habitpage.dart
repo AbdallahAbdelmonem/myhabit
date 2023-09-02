@@ -22,32 +22,32 @@ class _HabitPageState extends State<HabitPage> {
   saveData() async {
     if (widget.title == 'Simple') {
       SimpleData s = SimpleData();
-      // s.setData();
-      // s.deleteDate();
+      s.setData();
+      s.deleteDate();
       List<Map> response = await s.getData();
       setState(() {
         data.addAll(response);
       });
     } else if (widget.title == 'Islamic') {
       IslamicData s = IslamicData();
-      // s.setData();
-      // s.deleteDate();
+      s.setData();
+      s.deleteDate();
       List<Map> response = await s.getData();
       setState(() {
         data.addAll(response);
       });
     } else if (widget.title == 'Personal development') {
       PersonalData s = PersonalData();
-      // s.setData();
-      // s.deleteDate();
+      s.setData();
+      s.deleteDate();
       List<Map> response = await s.getData();
       setState(() {
         data.addAll(response);
       });
     } else if (widget.title == 'Diet') {
       DietData s = DietData();
-      // s.setData();
-      // s.deleteDate();
+      s.setData();
+      s.deleteDate();
       List<Map> response = await s.getData();
       setState(() {
         data.addAll(response);

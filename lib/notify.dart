@@ -8,7 +8,7 @@ class localnotification {
 
   Future<void> initlize() async {
     tz.initializeTimeZones();
-    const AndroidInitializationSettings and = AndroidInitializationSettings('@mipmap/ic_launcher.png');
+    const AndroidInitializationSettings and = AndroidInitializationSettings('@drawable/ic_stat_access_alarms');
 
     final InitializationSettings settings =
         InitializationSettings(android: and);
@@ -24,6 +24,7 @@ class localnotification {
       importance: Importance.max,
       priority: Priority.max,
       playSound: true,
+      sound: RawResourceAndroidNotificationSound("notification"),
     );
     return const NotificationDetails(android: andDet);
   }

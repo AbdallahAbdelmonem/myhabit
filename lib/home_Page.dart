@@ -26,11 +26,6 @@ class _Home_pageState extends State<Home_page> {
     print("data: ${data2}");
   }
 
-  // savePref() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   prefs.setString("save", "HELLO");
-  //   print("--------------Success--------");
-  // }
 
   @override
   void initState() {

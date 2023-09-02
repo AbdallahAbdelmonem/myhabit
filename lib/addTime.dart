@@ -133,7 +133,7 @@ class _Add_timeState extends State<Add_time> {
                   sh.getData();
                 });
 
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => MyWidget(),

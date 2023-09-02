@@ -40,11 +40,11 @@ class AppData {
 
   deleteDate() async {
 
-    await db.delete("DELETE FROM habits WHERE id=29");
-    await db.delete("DELETE FROM habits WHERE id=30");
-    await db.delete("DELETE FROM habits WHERE id=31");
+    await db.delete("DELETE FROM habits WHERE id>4");
+    // await db.delete("DELETE FROM habits WHERE id=30");
+    // await db.delete("DELETE FROM habits WHERE id=31");
     
-    await db.delete("DELETE FROM habits WHERE id=32");
+    // await db.delete("DELETE FROM habits WHERE id=32");
     
     // await db.delete("DELETE FROM habits WHERE id=15");
     // await db.delete("DELETE FROM habits WHERE id=26");

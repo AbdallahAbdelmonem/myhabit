@@ -34,8 +34,8 @@ class _AddNewState extends State<AddNew> {
     //   print("As ${getPref()}");
     // }
     // ad.updateData();
-    // ad.setData();
-    // ad.deleteDate();
+    ad.setData();
+    ad.deleteDate();
 
     // s.setData();
     // s.saveData();

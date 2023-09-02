@@ -33,7 +33,7 @@ class DietData {
   }
 
   deleteDate() async {
-    await db.delete("DELETE FROM diet WHERE id=1");
+    await db.delete("DELETE FROM diet WHERE id>3");
 
     // await db.delete("DELETE FROM habits WHERE id=15");
     // await db.delete("DELETE FROM habits WHERE id=16");

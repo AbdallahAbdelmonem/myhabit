@@ -16,7 +16,7 @@ class sqflDB {
   initialDB() async {
     String database_path = await getDatabasesPath();
     String path = join(database_path,
-        "habit2.db"); //==> join used to make path (database_path/first_app.db)
+        "habit.db"); //==> join used to make path (database_path/first_app.db)
     print("PAth: ${path}");
 
     Database mydb = await openDatabase(path,

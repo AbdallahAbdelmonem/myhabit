@@ -33,9 +33,9 @@ class IslamicData {
   }
 
   deleteDate() async {
-    await db.delete("DELETE FROM islamic WHERE id=4");
-    await db.delete("DELETE FROM islamic WHERE id=5");
-    await db.delete("DELETE FROM islamic WHERE id=6");
+    await db.delete("DELETE FROM islamic WHERE id>3");
+    // await db.delete("DELETE FROM islamic WHERE id=5");
+    // await db.delete("DELETE FROM islamic WHERE id=6");
 
     // await db.delete("DELETE FROM habits WHERE id=15");
     // await db.delete("DELETE FROM habits WHERE id=16");

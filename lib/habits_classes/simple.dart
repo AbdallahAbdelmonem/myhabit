@@ -37,11 +37,11 @@ class SimpleData {
   }
 
   deleteDate() async {
-    await db.delete("DELETE FROM simple WHERE id=11");
-    await db.delete("DELETE FROM simple WHERE id=12");
-    await db.delete("DELETE FROM simple WHERE id=13");
-    await db.delete("DELETE FROM simple WHERE id=14");
-    await db.delete("DELETE FROM simple WHERE id=15");
+    await db.delete("DELETE FROM simple WHERE id>5");
+    // await db.delete("DELETE FROM simple WHERE id=12");
+    // await db.delete("DELETE FROM simple WHERE id=13");
+    // await db.delete("DELETE FROM simple WHERE id=14");
+    // await db.delete("DELETE FROM simple WHERE id=15");
 
     // await db.delete("DELETE FROM habits WHERE id=15");
     // await db.delete("DELETE FROM habits WHERE id=16");
