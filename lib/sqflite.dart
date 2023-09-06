@@ -16,7 +16,7 @@ class sqflDB {
   initialDB() async {
     String database_path = await getDatabasesPath();
     String path = join(database_path,
-        "habit.db"); //==> join used to make path (database_path/first_app.db)
+        "habit5.db"); //==> join used to make path (database_path/first_app.db)
     print("PAth: ${path}");
 
     Database mydb = await openDatabase(path,
@@ -67,6 +67,14 @@ CREATE TABLE diet(
 
     await db.execute('''
 CREATE TABLE selecthabit(
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  time TEXT
+)
+''');
+
+    await db.execute('''
+CREATE TABLE habitdone(
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   title TEXT,
   time TEXT

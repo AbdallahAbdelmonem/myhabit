@@ -5,7 +5,7 @@ class SimpleData {
 
   getData() async {
     List<Map> response = await db.select("SELECT * FROM simple");
-    print("res: $response");
+    // print("res: $response");
 
     return response;
   }
@@ -21,7 +21,7 @@ class SimpleData {
         "INSERT INTO simple (title) VALUES ('Reading') ");
         await db.insert(
         "INSERT INTO simple (title) VALUES ('Workout') ");
-    print("$response");
+    // print("$response");
   }
 
   updateData() async {

@@ -5,7 +5,7 @@ class PersonalData {
 
   getData() async {
     List<Map> response = await db.select("SELECT * FROM personal");
-    print("res: $response");
+    // print("res: $response");
 
     return response;
   }
@@ -17,7 +17,7 @@ class PersonalData {
         "INSERT INTO personal (title) VALUES ('Learning') ");
         await db.insert(
         "INSERT INTO personal (title) VALUES ('Journaling') ");
-    print("$response");
+    // print("$response");
   }
 
   updateData() async {

@@ -5,7 +5,7 @@ class IslamicData {
 
   getData() async {
     List<Map> response = await db.select("SELECT * FROM islamic");
-    print("res: $response");
+    // print("res: $response");
 
     return response;
   }
@@ -17,7 +17,7 @@ class IslamicData {
         "INSERT INTO islamic (title) VALUES ('Evining azkar') ");
         await db.insert(
         "INSERT INTO islamic (title) VALUES ('Prayer') ");
-    print("$response");
+    // print("$response");
   }
 
   updateData() async {

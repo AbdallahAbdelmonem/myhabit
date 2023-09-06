@@ -54,7 +54,7 @@ class _HabitPageState extends State<HabitPage> {
       });
     }
 
-    print("dd ${data}");
+    // print("dd ${data}");
   }
 
   @override

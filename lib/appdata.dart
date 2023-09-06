@@ -2,16 +2,14 @@ import 'package:myhabit/sqflite.dart';
 
 class AppData {
   sqflDB db = sqflDB();
-  setData() async {
-    // int response = await db.insert(
-    //     "INSERT INTO habits (title,img) VALUES ('Simple','images/sample.jpg') ");
 
-    // await db.insert(
-    //     "INSERT INTO habits (title,img) VALUES ('Islamic','images/islamic.jpg') ");
-    // await db.insert(
-    //     "INSERT INTO habits (title,img) VALUES ('Personal development','images/develop.jpg') ");
-    // await db.insert(
-    //     "INSERT INTO habits (title,img) VALUES ('Diet','images/diet.jpg') ");
+   getData() async {
+    List<Map> response = await db.select("SELECT * FROM habits");
+    // print("res: $response");
+
+    return response;
+  }
+  setData() async {
 
     int response = await db.insert(
         "INSERT INTO habits (title,img) VALUES ('Simple','images/png 3.png') ");
@@ -23,7 +21,7 @@ class AppData {
     await db.insert(
         "INSERT INTO habits (title,img) VALUES ('Diet','images/png 1.png') ");
 
-    print("$response");
+    // print("$response");
   }
 
   updateData() async {
@@ -41,19 +39,5 @@ class AppData {
   deleteDate() async {
 
     await db.delete("DELETE FROM habits WHERE id>4");
-    // await db.delete("DELETE FROM habits WHERE id=30");
-    // await db.delete("DELETE FROM habits WHERE id=31");
-    
-    // await db.delete("DELETE FROM habits WHERE id=32");
-    
-    // await db.delete("DELETE FROM habits WHERE id=15");
-    // await db.delete("DELETE FROM habits WHERE id=26");
-
-    // await db.delete("DELETE FROM habits WHERE id=27");
-    // await db.delete("DELETE FROM habits WHERE id=28");
-    // await db.delete("DELETE FROM habits WHERE id=18");
-    
-    // await db.delete("DELETE FROM habits WHERE id=19");
-    // await db.delete("DELETE FROM habits WHERE id=20");
   }
 }

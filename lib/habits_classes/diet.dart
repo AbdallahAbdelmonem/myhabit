@@ -5,7 +5,7 @@ class DietData {
 
   getData() async {
     List<Map> response = await db.select("SELECT * FROM diet");
-    print("res: $response");
+    // print("res: $response");
 
     return response;
   }
@@ -17,7 +17,7 @@ class DietData {
         "INSERT INTO diet (title) VALUES ('Eat fruits') ");
         await db.insert(
         "INSERT INTO diet (title) VALUES ('No junk food') ");
-    print("$response");
+    // print("$response");
   }
 
   updateData() async {

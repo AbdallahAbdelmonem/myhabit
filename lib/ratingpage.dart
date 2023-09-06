@@ -32,9 +32,9 @@ class _MyRatingState extends State<MyRating> {
           Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 18),
+                padding: EdgeInsets.fromLTRB(18, 18, 18, 18),
                 width: 400,
-                height: 510,
+                height: 530,
                 child: ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: ratingData.length,
@@ -63,7 +63,7 @@ class _MyRatingState extends State<MyRating> {
                                 return Icon(Icons.star, color: Colors.yellow);
                               },
                               onRatingUpdate: (rating) {
-                                print("rating");
+                                // print("rating");
                               }),
                         ),
                         Container(

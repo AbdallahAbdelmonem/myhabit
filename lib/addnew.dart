@@ -19,27 +19,17 @@ class _AddNewState extends State<AddNew> {
   List<Map> data = [];
   saveData() async {
     List<Map> response = await db.select("SELECT * FROM habits");
-    print("res: $response");
+    // print("res: $response");
     setState(() {
       data.addAll(response);
     });
-    print("data: ${data}");
+    // print("data: ${data}");
   }
 
   @override
   void initState() {
-    // if (getPref() == 'HELLO') {
-    //   print("AAAAAAAAAAAAAAAAAAAAAAAA");
-    // } else {
-    //   print("As ${getPref()}");
-    // }
-    // ad.updateData();
     ad.setData();
     ad.deleteDate();
-
-    // s.setData();
-    // s.saveData();
-    // ad.deleteDate();
     s.getData();
 
     saveData();

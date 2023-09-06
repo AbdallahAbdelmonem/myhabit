@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:flutter_background_service_android/flutter_background_service_android.dart';
-import 'package:myhabit/addTime.dart';
 import 'package:myhabit/notify.dart';
 import 'package:myhabit/selectedhabit.dart';
 
@@ -21,7 +20,7 @@ void check() async {
   List d = [];
   d.addAll(await sh.getData());
   for (int i = 0; i < d.length; i++) {
-    print("DDD: ${d[i]['time']}");
+    // print("DDD: ${d[i]['time']}");
     String tim1 = '${d[i]['time']}';
     if (tim1 == TimeOfDay.now().toString() ) {
       // Navigator.push(context, MaterialPageRoute(builder: (context) => E(),));
@@ -31,11 +30,11 @@ void check() async {
           title: "${d[i]['title']} Habit",
           body: "Sustained effort is what makes the real difference",
           second: 10);
-      print("ggg");
+      // print("ggg");
       x = 1;
     } else {
       // x = 0;
-      print("dddd $tim1");
+      // print("dddd $tim1");
       // print("title ${ss}");
     }
   }
@@ -87,7 +86,7 @@ onStart(ServiceInstance service) async {
     x = 0;
     check();
 
-    print("background running");
+    // print("background running");
     service.invoke('update');
   });
 }

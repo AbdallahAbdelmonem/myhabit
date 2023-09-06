@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:myhabit/habitdoneData.dart';
+import 'package:myhabit/habitsdone.dart';
+import 'package:myhabit/home_Page.dart';
 import 'package:myhabit/main.dart';
 import 'package:myhabit/notify.dart';
-import 'package:myhabit/selectedhabit.dart';
 import 'package:myhabit/selectedhabit.dart';
 
 import 'backServices.dart';
-import 'package:myhabit/main.dart';
-import 'package:myhabit/notify.dart';
 
 class Add_time extends StatefulWidget {
   Add_time(
@@ -37,6 +36,7 @@ class _Add_timeState extends State<Add_time> {
   }
 
   SelectedHabitData sh = SelectedHabitData();
+  HabitsDoneData hd = HabitsDoneData();
 
   late final localnotification service;
 
@@ -107,7 +107,7 @@ class _Add_timeState extends State<Add_time> {
           MaterialButton(
             onPressed: () {
               //page
-              print("object");
+              // print("object");
               Navigator.pop(context);
             },
             child: Text(
@@ -126,7 +126,7 @@ class _Add_timeState extends State<Add_time> {
             onPressed: () async {
               //page
               // check();
-              print("object");
+              // print("object");
               if (widget.page == "HabitPage") {
                 setState(() {
                   sh.setData("${widget.title}", "${tim1}");
@@ -140,10 +140,15 @@ class _Add_timeState extends State<Add_time> {
                     ));
               } else if (widget.page == "HomePage") {
                 sh.updateData("${tim1}", widget.id);
-                print("Updated ${widget.id}");
-                Navigator.pop(context);
+                hd.updateData("${tim1}", widget.id);
+                // print("Updated ${widget.id}");
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Home_page(),
+                    ));
               }
-              
+
               await initializeService();
               // print("Notify");
               // await service.showNotification(

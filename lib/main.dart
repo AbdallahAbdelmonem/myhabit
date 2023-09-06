@@ -1,14 +1,21 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:myhabit/addnew.dart';
+import 'package:myhabit/habitdoneData.dart';
+import 'package:myhabit/habits_classes/diet.dart';
+import 'package:myhabit/habits_classes/islamic.dart';
+import 'package:myhabit/habits_classes/personal.dart';
+import 'package:myhabit/habits_classes/simple.dart';
 import 'package:myhabit/home_Page.dart';
 import 'package:myhabit/notify.dart';
 import 'package:myhabit/ratingpage.dart';
+import 'package:myhabit/selectedhabit.dart';
 import 'package:myhabit/splashScreen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'appdata.dart';
 import 'backServices.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'habitsdone.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,12 +57,50 @@ class _MyWidgetState extends State<MyWidget> {
   int selectedIndex = 0;
   List<Widget> wig = [Home_page(), AddNew(), MyRating()];
   @override
+  SelectedHabitData sh = SelectedHabitData();
+  HabitsDoneData hd = HabitsDoneData();
+  AppData ad = AppData();
+  SimpleData s = SimpleData();
+  PersonalData p = PersonalData();
+  DietData d = DietData();
+  IslamicData i = IslamicData();
+  saveData() async {
+    await ad.setData();
+    await ad.deleteDate();
+    await ad.getData();
+
+    await s.setData();
+    await s.deleteDate();
+    await s.getData();
+
+    await i.setData();
+    await i.deleteDate();
+    await i.getData();
+
+    await p.setData();
+    await p.deleteDate();
+    await p.getData();
+
+    await d.setData();
+    await d.deleteDate();
+    await d.getData();
+
+    await sh.getData();
+    await hd.getData();
+  }
+
+  @override
+  void initState() {
+    saveData();
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Color.fromARGB(255, 27, 38, 51),
         color: Color.fromARGB(255, 42, 53, 65),
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: Duration(milliseconds: 500),
         onTap: (index) {
           setState(() {
             selectedIndex = index;
