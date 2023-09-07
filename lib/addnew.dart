@@ -89,7 +89,7 @@ class _AddNewState extends State<AddNew> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Container(
                             width: 135,
                             child: Text(
@@ -101,12 +101,9 @@ class _AddNewState extends State<AddNew> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(8.0, 8.0, 7, 8.0),
-                          child: Image.asset(
-                            "${data[index]['img']}",
-                            height: 650,
-                          ),
+                        Image.asset(
+                          "${data[index]['img']}",
+                          // height: 450,
                         ),
                       ],
                       // )

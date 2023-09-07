@@ -34,7 +34,7 @@ class _MyRatingState extends State<MyRating> {
               Container(
                 padding: EdgeInsets.fromLTRB(18, 18, 18, 18),
                 width: 400,
-                height: 530,
+                height: 550,
                 child: ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: ratingData.length,
