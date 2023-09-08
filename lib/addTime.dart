@@ -129,7 +129,12 @@ class _Add_timeState extends State<Add_time> {
               // print("object");
               if (widget.page == "HabitPage") {
                 setState(() {
-                  sh.setData("${widget.title}", "${tim1}");
+                  print("tim1: $tim1");
+                  if (tim1 != null) {
+                    sh.setData("${widget.title}", "${tim1}");
+                  } else {
+                    sh.setData("${widget.title}", "${_timeOfDay.toString()}");
+                  }
                   sh.getData();
                 });
 
@@ -139,13 +144,19 @@ class _Add_timeState extends State<Add_time> {
                       builder: (context) => MyWidget(),
                     ));
               } else if (widget.page == "HomePage") {
-                sh.updateData("${tim1}", widget.id);
-                hd.updateData("${tim1}", widget.id);
+                if (tim1 != null) {
+                  sh.updateData("${tim1}", widget.id);
+                  hd.updateData("${tim1}", widget.id);
+                }
+                else{
+                  sh.updateData("${_timeOfDay.toString()}", widget.id);
+                  hd.updateData("${_timeOfDay.toString()}", widget.id);
+                }
                 // print("Updated ${widget.id}");
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home_page(),
+                      builder: (context) => MyWidget(),
                     ));
               }
 
