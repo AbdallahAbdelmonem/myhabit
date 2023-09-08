@@ -131,7 +131,14 @@ class _AddNewHabit extends State<AddNewHabit> {
             onPressed: () async {
               //page
               setState(() {
-                sh.setData("${txt.text}", "${tim1}");
+                if (tim1 != null) {
+                  sh.setData("${txt.text}", "${tim1}");
+                  
+                }
+                else{
+                  sh.setData("${txt.text}", "${_timeOfDay.toString()}");
+
+                }
                 sh.getData();
               });
 
