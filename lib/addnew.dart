@@ -50,7 +50,7 @@ class _AddNewState extends State<AddNew> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => AddNewHabit(),
@@ -59,6 +59,7 @@ class _AddNewState extends State<AddNew> {
                 icon: Icon(Icons.add_box_rounded)),
           ],
           centerTitle: true,
+          
         ),
         body: Container(
           height: height * 0.90,
@@ -67,7 +68,7 @@ class _AddNewState extends State<AddNew> {
             itemBuilder: (context, index) {
               return ListTile(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => HabitPage(

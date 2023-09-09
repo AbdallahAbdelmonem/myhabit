@@ -142,7 +142,7 @@ class _AddNewHabit extends State<AddNewHabit> {
                 sh.getData();
               });
 
-              Navigator.push(
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MyWidget(),

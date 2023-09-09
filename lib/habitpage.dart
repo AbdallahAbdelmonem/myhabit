@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myhabit/addTime.dart';
+import 'package:myhabit/addnew.dart';
 import 'package:myhabit/habits_classes/diet.dart';
 import 'package:myhabit/habits_classes/islamic.dart';
 import 'package:myhabit/habits_classes/personal.dart';
 import 'package:myhabit/habits_classes/simple.dart';
+import 'package:myhabit/main.dart';
 
 class HabitPage extends StatefulWidget {
   HabitPage(
@@ -74,6 +76,15 @@ class _HabitPageState extends State<HabitPage> {
           centerTitle: true,
           title: Text("${widget.title} Habit",
               style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold)),
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyWidget(),
+                    ));
+              },
+              icon: Icon(Icons.arrow_back)),
         ),
         body: ListView(
           children: [
@@ -114,7 +125,7 @@ class _HabitPageState extends State<HabitPage> {
                               //     MaterialPageRoute(
                               //       builder: (context) => MyWidget(),
                               //     ));
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => Add_time(

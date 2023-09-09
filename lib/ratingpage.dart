@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:myhabit/main.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
 
@@ -90,7 +91,7 @@ class _MyRatingState extends State<MyRating> {
                         style: TextStyle(color: Colors.white),
                         cursorColor: Colors.white,
                         maxLines: 6,
-                        keyboardType: TextInputType.multiline,
+                        keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                             hintText: "Enter Your Comment",
                             hintStyle: TextStyle(color: Colors.white),
@@ -115,8 +116,7 @@ class _MyRatingState extends State<MyRating> {
                             //     context,
                             //     MaterialPageRoute(
                             //         builder: (context) => MyWidget())),
-                            onConfirmBtnTap: () =>
-                                Navigator.pushNamed(context, "Main"),
+                            onConfirmBtnTap: () => Navigator.pop(context),
                             customAsset: "images/giphy.gif",
                           );
                         },
