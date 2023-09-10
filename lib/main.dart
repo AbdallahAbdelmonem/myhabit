@@ -12,20 +12,24 @@ import 'package:myhabit/ratingpage.dart';
 import 'package:myhabit/selectedhabit.dart';
 import 'package:myhabit/splashScreen.dart';
 import 'package:permission_handler/permission_handler.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'appdata.dart';
 import 'backServices.dart';
-import 'habitsdone.dart';
+import 'package:auto_start_flutter/auto_start_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Permission.notification.isDenied.then((value) {
+  await Permission.notification.isDenied.then((value) async {
     if (value) {
       Permission.notification.request();
       localnotification().initlize();
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('autoStart', false);
     }
   });
+
   await initializeService();
+
   runApp(const MyApp());
 }
 
@@ -91,8 +95,18 @@ class _MyWidgetState extends State<MyWidget> {
 
   @override
   void initState() {
+    initAutoStart();
     saveData();
     super.initState();
+  }
+
+  initAutoStart() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if (prefs.getBool('autoStart') == false) {
+      getAutoStartPermission();
+      await prefs.setBool('autoStart', true);
+    }
   }
 
   Widget build(BuildContext context) {
