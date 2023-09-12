@@ -81,7 +81,7 @@ class _HabitPageState extends State<HabitPage> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MyWidget(),
+                      builder: (context) => MyWidget(index: 1),
                     ));
               },
               icon: Icon(Icons.arrow_back)),

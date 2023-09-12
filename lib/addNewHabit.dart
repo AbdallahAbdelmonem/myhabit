@@ -116,7 +116,11 @@ class _AddNewHabit extends State<AddNewHabit> {
           MaterialButton(
             onPressed: () {
               //page
-              Navigator.pop(context);
+               Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyWidget(index: 1),
+                  ));
             },
             child: Text("Cancel",
                 style: TextStyle(
@@ -145,7 +149,7 @@ class _AddNewHabit extends State<AddNewHabit> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyWidget(),
+                    builder: (context) => MyWidget(index: 0),
                   ));
 
               await initializeService();

@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => MyWidget()));
+          context, MaterialPageRoute(builder: (_) => MyWidget(index: 0,)));
     });
 
     super.initState();

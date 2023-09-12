@@ -27,7 +27,7 @@ void check() async {
       FlutterBackgroundService().invoke('setAsForeground');
       await service2.showNotification(
           id: 1,
-          title: "${d[i]['title']} Habit",
+          title: "${d[i]['title']}",
           body: "Sustained effort is what makes the real difference",
           second: 10);
       // print("ggg");
@@ -80,7 +80,7 @@ onStart(ServiceInstance service) async {
     if (service is AndroidServiceInstance) {
       if (await service.isForegroundService()) {
         service.setForegroundNotificationInfo(
-            title: "Hbaits App", content: "running....");
+            title: "myhabit App", content: "running....");
       }
     }
     x = 0;

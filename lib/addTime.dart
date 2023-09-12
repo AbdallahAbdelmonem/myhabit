@@ -114,13 +114,17 @@ class _Add_timeState extends State<Add_time> {
                 // print("object");
                 // Navigator.pop(context);
                 if (widget.page == "HabitPage") {
-                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyWidget(index: 1),
+                      ));
                 } else if (widget.page == "HomePage") {
                   // print("Updated ${widget.id}");
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyWidget(),
+                        builder: (context) => MyWidget(index: 0),
                       ));
                 }
               },
@@ -155,7 +159,7 @@ class _Add_timeState extends State<Add_time> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyWidget(),
+                        builder: (context) => MyWidget(index: 0),
                       ));
                 } else if (widget.page == "HomePage") {
                   if (tim1 != null) {
@@ -169,7 +173,7 @@ class _Add_timeState extends State<Add_time> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyWidget(),
+                        builder: (context) => MyWidget(index: 0),
                       ));
                 }
       

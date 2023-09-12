@@ -62,7 +62,7 @@ class _HabitsDoneState extends State<HabitsDone> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MyWidget(),
+                      builder: (context) => MyWidget(index: 0),
                     ));
               },
               icon: Icon(Icons.arrow_back)),

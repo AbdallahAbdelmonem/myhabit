@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
       routes: {
-        "Main": (context) => MyWidget(),
+        "Main": (context) => MyWidget(index: 0),
         "homePage": (context) => Home_page(),
         "addnew": (context) => AddNew(),
       },
@@ -51,14 +51,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
-
+   MyWidget({super.key, required this.index});
+   int index;
   @override
   State<MyWidget> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<MyWidget> {
-  int selectedIndex = 0;
+  // int selectedIndex = 0;
   List<Widget> wig = [Home_page(), AddNew(), MyRating()];
   @override
   SelectedHabitData sh = SelectedHabitData();
@@ -115,9 +115,10 @@ class _MyWidgetState extends State<MyWidget> {
         backgroundColor: Color.fromARGB(255, 27, 38, 51),
         color: Color.fromARGB(255, 42, 53, 65),
         animationDuration: Duration(milliseconds: 500),
+        index: widget.index,
         onTap: (index) {
           setState(() {
-            selectedIndex = index;
+            widget.index = index;
           });
         },
         items: [
@@ -135,7 +136,7 @@ class _MyWidgetState extends State<MyWidget> {
           ),
         ],
       ),
-      body: wig.elementAt(selectedIndex),
+      body: wig.elementAt(widget.index),
     );
   }
 }
